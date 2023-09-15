@@ -1,51 +1,33 @@
-import java.time.LocalDateTime;
-
 public class Compromisso {
-    private int id;
     private String data;
     private String horario;
     private String descricao;
-    
+    private Cliente cliente; 
 
-   
-
-    public Compromisso(int id, String data, String horario, String descricao){
-        this.id = id;
+    public Compromisso(String data, String horario, String descricao) {
         this.data = data;
         this.horario = horario;
         this.descricao = descricao;
-    }
-
-  public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getData() {
         return data;
     }
 
-    public void setData(String data) {
-        this.data = data;
-    }
     public String getHorario() {
         return horario;
     }
 
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
-     public String getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    
-
+    // Adicione um método para definir o cliente associado
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 }

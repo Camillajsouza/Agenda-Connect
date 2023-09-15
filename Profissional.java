@@ -1,50 +1,40 @@
-
 public class Profissional {
     private String nome;
+    private Agenda[] agendas;
+    private int numAgendas;
+
+    public Profissional(String nome, int maxAgendas) {
+        this.nome = nome;
+        this.agendas = new Agenda[maxAgendas];
+        this.numAgendas = 0;
+    }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void adicionarAgenda(Agenda agenda) {
+        if (numAgendas < agendas.length) {
+            agendas[numAgendas] = agenda;
+            numAgendas++;
+        } else {
+            System.out.println("Limite de agendas atingido.");
+        }
     }
 
-    private String email;
-
-    public String getEmail() {
-        return email;
+    public Agenda criarAgenda(String nome) {
+        if (numAgendas < agendas.length) {
+            Agenda novaAgenda = new Agenda(nome);
+            agendas[numAgendas] = novaAgenda;
+            numAgendas++;
+            return novaAgenda;
+        } else {
+            System.out.println("Limite de agendas atingido.");
+            return null;
+        }
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Agenda[] getAgendas() {
+        return agendas;
     }
-
-    private String senha;
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    private Agenda agenda;
-
-    public Agenda getAgenda() {
-        return agenda;
-    }
-
-    public void setAgenda(Agenda agenda) {
-        this.agenda = agenda;
-    }
-
-    public Profissional(String nome, String email, String senha) {
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.agenda = new Agenda(this);
-    }
-
 }

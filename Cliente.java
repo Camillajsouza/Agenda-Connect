@@ -1,27 +1,37 @@
 public class Cliente {
     private String nome;
-    public String getNome() {
-        return nome;
-    }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    private String contato;
+    private String email;
 
-    public String getContato() {
-        return contato;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setContato(String contato) {
-        this.contato = contato;
+    private String telefone;
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
-    public Cliente(String nome, String contato) {
+    public Cliente(String nome, String email, String telefone) {
         this.nome = nome;
-        this.contato = contato;
+        this.email = email;
+        this.telefone = telefone;
     }
 
-    // Getters para nome e contato
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
 }
